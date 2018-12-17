@@ -96,22 +96,31 @@
         <script>
             $(document)
                 .ready(function() {
-                // fix menu when passed
-                $('.masthead')
-                    .visibility({
-                    once: false,
-                    onBottomPassed: function() {
-                        $('.fixed.menu').transition('fade in');
-                    },
-                    onBottomPassedReverse: function() {
-                        $('.fixed.menu').transition('fade out');
-                    }
-                    })
-                ;
-                // create sidebar and attach to menu open
-                $('.ui.sidebar')
-                    .sidebar('attach events', '.toc.item')
-                ;
+                    // fix menu when passed
+                    $('.masthead')
+                        .visibility({
+                        once: false,
+                        onBottomPassed: function() {
+                            $('.fixed.menu').transition('fade in');
+                        },
+                        onBottomPassedReverse: function() {
+                            $('.fixed.menu').transition('fade out');
+                        }
+                        })
+                    ;
+                    // create sidebar and attach to menu open
+                    $('.ui.sidebar')
+                        .sidebar('attach events', '.toc.item')
+                    ;
+                    $('#about')
+                        .visibility({
+                            onTopPassed: function(calculations) {
+                            // top of element passed
+                                $('.active').removeClass('active')
+                                $('#menu-about').addClass('active item')
+                            },
+                        })
+                    ;
                 })
             ;
             </script>
@@ -120,8 +129,8 @@
     <body>
         <!-- Following Menu -->
         <div class="ui large top fixed inverted hidden menu">
-            <a class="active item">Home</a>
-            <a class="item" onclick="$('html,body').animate({scrollTop:$('#about').offset().top});">About</a>
+            <a class="active item" id="menu-home">Home</a>
+            <a class="item" id="menu-about" onclick="$('html,body').animate({scrollTop:$('#about').offset().top});">About</a>
             <a class="item" onclick="$('html,body').animate({scrollTop:$('#experience').offset().top});">Experience</a>
             <a class="item" onclick="$('html,body').animate({scrollTop:$('#projects').offset().top});">Projects</a>
             <a class="item" onclick="$('html,body').animate({scrollTop:$('#involvement').offset().top});">Involvement</a>
