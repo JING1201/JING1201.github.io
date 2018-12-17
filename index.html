@@ -105,7 +105,14 @@
                         },
                         onBottomPassedReverse: function() {
                             $('.fixed.menu').transition('fade out');
-                        }
+                            $('.active').removeClass('active')
+                            $('.menu-home').addClass('active')
+                        },
+                        onTopPassed: function() {
+                            // top of element passed
+                            $('.active').removeClass('active')
+                            $('.menu-home').addClass('active')
+                        },
                         })
                     ;
                     // create sidebar and attach to menu open
@@ -114,10 +121,31 @@
                     ;
                     $('#about')
                         .visibility({
-                            onTopPassed: function(calculations) {
+                            once: false,
+                            onTopPassed: function() {
                             // top of element passed
                                 $('.active').removeClass('active')
-                                $('#menu-about').addClass('active item')
+                                $('.menu-about').addClass('active')
+                            },
+                            onBottomPassedReverse: function() {
+                            // top of element passed
+                                $('.active').removeClass('active')
+                                $('.menu-about').addClass('active')
+                            },
+                        })
+                    ;
+                    $('#experience')
+                        .visibility({
+                            once: false,
+                            onTopPassed: function() {
+                            // top of element passed
+                                $('.active').removeClass('active')
+                                $('.menu-experience').addClass('active')
+                            },
+                            onBottomPassedReverse: function() {
+                            // top of element passed
+                                $('.active').removeClass('active')
+                                $('.menu-experience').addClass('active')
                             },
                         })
                     ;
@@ -129,17 +157,17 @@
     <body>
         <!-- Following Menu -->
         <div class="ui large top fixed inverted hidden menu">
-            <a class="active item" id="menu-home">Home</a>
-            <a class="item" id="menu-about" onclick="$('html,body').animate({scrollTop:$('#about').offset().top});">About</a>
-            <a class="item" onclick="$('html,body').animate({scrollTop:$('#experience').offset().top});">Experience</a>
-            <a class="item" onclick="$('html,body').animate({scrollTop:$('#projects').offset().top});">Projects</a>
-            <a class="item" onclick="$('html,body').animate({scrollTop:$('#involvement').offset().top});">Involvement</a>
+            <a class="active item menu-home" onclick="$('html,body').animate({scrollTop:$('#home').offset().top});">Home</a>
+            <a class="item menu-about" onclick="$('html,body').animate({scrollTop:$('#about').offset().top});">About</a>
+            <a class="item menu-experience" onclick="$('html,body').animate({scrollTop:$('#experience').offset().top});">Experience</a>
+            <a class="item menu-projects" onclick="$('html,body').animate({scrollTop:$('#projects').offset().top});">Projects</a>
+            <a class="item menu-involvement" onclick="$('html,body').animate({scrollTop:$('#involvement').offset().top});">Involvement</a>
             <a class="item" href="https://drive.google.com/open?id=1OOu8fzeQ5Fz7T13mWFceSIyFdt4EPYSw" target="_blank">
                 Resume
             </a>
             <div class="right menu">
                 <div class="item">
-                <a class="ui primary button">Contact</a>
+                <a class="ui inverted button">Contact</a>
                 </div>
             </div>
             </div>
@@ -147,11 +175,11 @@
         
         <!-- Sidebar Menu -->
         <div class="ui vertical inverted sidebar menu">
-            <a class="active item">Home</a>
-            <a class="item" onclick="$('html,body').animate({scrollTop:$('#about').offset().top});">About</a>
-            <a class="item" onclick="$('html,body').animate({scrollTop:$('#experience').offset().top});">Experience</a>
-            <a class="item" onclick="$('html,body').animate({scrollTop:$('#projects').offset().top});">Projects</a>
-            <a class="item" onclick="$('html,body').animate({scrollTop:$('#involvement').offset().top});">Involvement</a>
+            <a class="active item menu-home" onclick="$('html,body').animate({scrollTop:$('#home').offset().top});">Home</a>
+            <a class="item menu-about" onclick="$('html,body').animate({scrollTop:$('#about').offset().top});">About</a>
+            <a class="item menu-experience" onclick="$('html,body').animate({scrollTop:$('#experience').offset().top});">Experience</a>
+            <a class="item menu-projects" onclick="$('html,body').animate({scrollTop:$('#projects').offset().top});">Projects</a>
+            <a class="item menu-involvement" onclick="$('html,body').animate({scrollTop:$('#involvement').offset().top});">Involvement</a>
             <a class="item" href="https://drive.google.com/open?id=1OOu8fzeQ5Fz7T13mWFceSIyFdt4EPYSw" target="_blank">
                 Resume
             </a>
@@ -160,17 +188,17 @@
         
         <!-- Page Contents -->
         <div class="pusher">
-            <div class="ui inverted vertical masthead center aligned segment">
+            <div class="ui inverted vertical masthead center aligned segment" id="home">
                 <div class="ui container">
                     <div class="ui large secondary inverted menu">
                             <a class="toc item">
                                 <i class="sidebar icon"></i>
                             </a>
-                            <a class="active item">Home</a>
-                            <a class="item" onclick="$('html,body').animate({scrollTop:$('#about').offset().top});">About</a>
-                            <a class="item" onclick="$('html,body').animate({scrollTop:$('#experience').offset().top});">Experience</a>
-                            <a class="item" onclick="$('html,body').animate({scrollTop:$('#projects').offset().top});">Projects</a>
-                            <a class="item" onclick="$('html,body').animate({scrollTop:$('#involvement').offset().top});">Involvement</a>
+                            <a class="active item menu-home" onclick="$('html,body').animate({scrollTop:$('#home').offset().top});">Home</a>
+                            <a class="item menu-about" onclick="$('html,body').animate({scrollTop:$('#about').offset().top});">About</a>
+                            <a class="item menu-experience" onclick="$('html,body').animate({scrollTop:$('#experience').offset().top});">Experience</a>
+                            <a class="item menu-projects" onclick="$('html,body').animate({scrollTop:$('#projects').offset().top});">Projects</a>
+                            <a class="item menu-involvement" onclick="$('html,body').animate({scrollTop:$('#involvement').offset().top});">Involvement</a>
                             <a class="item" href="https://drive.google.com/open?id=1OOu8fzeQ5Fz7T13mWFceSIyFdt4EPYSw" target="_blank">
                                 Resume
                             </a>
@@ -222,7 +250,7 @@
                 </div>
             </div>
         
-            <div class="ui vertical stripe segment">
+            <div class="ui vertical stripe segment" id="experience">
                 <div class="ui text container">
                     <h3 class="ui header">Breaking The Grid, Grabs Your Attention</h3>
                     <p>Instead of focusing on content creation and hard work, we have learned how to master the art of doing nothing by providing massive amounts of whitespace and generic content that can seem massive, monolithic and worth your attention.</p>
