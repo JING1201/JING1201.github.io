@@ -13,7 +13,7 @@
             .masthead.segment {
                 min-height: 750px;
                 padding: 1em 0em;
-                background-image: url('images/background8.gif') !important;
+                background-image: url('images/background.jpeg') !important;
                 background-size: cover !important;
             }
             .masthead .logo.item img {
@@ -51,12 +51,9 @@
             .ui.vertical.stripe .horizontal.divider {
                 margin: 3em 0em;
             }
-            .quote.stripe.segment {
-                padding: 0em;
-            }
-            .quote.stripe.segment .grid .column {
-                padding-top: 5em;
-                padding-bottom: 5em;
+            .ui.centered.three.doubling.cards {
+                padding-left: 5em;
+                padding-right: 5em;
             }
             .footer.segment {
                 padding: 5em 0em;
@@ -86,6 +83,19 @@
                 margin-top: 0.5em;
                 font-size: 1.5em;
                 }
+            }
+            .ui.move.reveal .hidden.content{
+                -webkit-transform: translateX(-100%)!important;
+                -ms-transform: translateX(-100%)!important;
+                transform: translateX(-100%)!important;
+            }
+            .ui.move.reveal:hover .hidden.content{
+                -webkit-transform: translateX(1%)!important;
+                -ms-transform: translateX(1%)!important;
+                transform: translateX(1%)!important;
+            }
+            .ui.move.reveal>.content {
+                display: block!important;
             }
             body{
                 position: relative;
@@ -152,6 +162,21 @@
                             },
                         })
                     ;
+                    $('#skills')
+                        .visibility({
+                            once: false,
+                            onTopPassed: function() {
+                            // top of element passed
+                                $('.active').removeClass('active')
+                                $('.menu-skills').addClass('active')
+                            },
+                            onBottomPassedReverse: function() {
+                            // top of element passed
+                                $('.active').removeClass('active')
+                                $('.menu-skills').addClass('active')
+                            },
+                        })
+                    ;
                 })
             ;
             </script>
@@ -163,6 +188,7 @@
             <a class="active item menu-home" onclick="$('html,body').animate({scrollTop:$('#home').offset().top});">Home</a>
             <a class="item menu-about" onclick="$('html,body').animate({scrollTop:$('#about').offset().top});">About</a>
             <a class="item menu-experience" onclick="$('html,body').animate({scrollTop:$('#experience').offset().top});">Experience</a>
+            <a class="item menu-skills" onclick="$('html,body').animate({scrollTop:$('#skills').offset().top});">Skills</a>
             <a class="item menu-projects" onclick="$('html,body').animate({scrollTop:$('#projects').offset().top});">Projects</a>
             <a class="item menu-involvement" onclick="$('html,body').animate({scrollTop:$('#involvement').offset().top});">Involvement</a>
             <a class="item" href="https://drive.google.com/open?id=1OOu8fzeQ5Fz7T13mWFceSIyFdt4EPYSw" target="_blank">
@@ -181,6 +207,7 @@
             <a class="active item menu-home" onclick="$('html,body').animate({scrollTop:$('#home').offset().top});">Home</a>
             <a class="item menu-about" onclick="$('html,body').animate({scrollTop:$('#about').offset().top});">About</a>
             <a class="item menu-experience" onclick="$('html,body').animate({scrollTop:$('#experience').offset().top});">Experience</a>
+            <a class="item menu-skills" onclick="$('html,body').animate({scrollTop:$('#skills').offset().top});">Skills</a>
             <a class="item menu-projects" onclick="$('html,body').animate({scrollTop:$('#projects').offset().top});">Projects</a>
             <a class="item menu-involvement" onclick="$('html,body').animate({scrollTop:$('#involvement').offset().top});">Involvement</a>
             <a class="item" href="https://drive.google.com/open?id=1OOu8fzeQ5Fz7T13mWFceSIyFdt4EPYSw" target="_blank">
@@ -200,6 +227,7 @@
                             <a class="active item menu-home" onclick="$('html,body').animate({scrollTop:$('#home').offset().top});">Home</a>
                             <a class="item menu-about" onclick="$('html,body').animate({scrollTop:$('#about').offset().top});">About</a>
                             <a class="item menu-experience" onclick="$('html,body').animate({scrollTop:$('#experience').offset().top});">Experience</a>
+                            <a class="item menu-skills" onclick="$('html,body').animate({scrollTop:$('#skills').offset().top});">Skills</a>
                             <a class="item menu-projects" onclick="$('html,body').animate({scrollTop:$('#projects').offset().top});">Projects</a>
                             <a class="item menu-involvement" onclick="$('html,body').animate({scrollTop:$('#involvement').offset().top});">Involvement</a>
                             <a class="item" href="https://drive.google.com/open?id=1OOu8fzeQ5Fz7T13mWFceSIyFdt4EPYSw" target="_blank">
@@ -217,16 +245,16 @@
                     </h1>
                     <h2>Computer Science + Linguistics Student @ UF</h2>
                     <br>
-                    <a class="ui massive inverted icon button">
+                    <a class="ui massive inverted icon button" href="mailto:low.jing@ufl.edu">
                         <i class="envelope large icon"></i>
                     </a>
-                    <a class="ui massive inverted icon button">
+                    <a class="ui massive inverted icon button" href="https://www.linkedin.com/in/jinglow/" target="_blank">
                         <i class="linkedin large icon"></i>
                     </a>
-                    <a class="ui massive inverted icon button">
+                    <a class="ui massive inverted icon button" href="https://twitter.com/jlionwg" target="_blank">
                         <i class="twitter large icon"></i>
                     </a>
-                    <a class="ui massive inverted icon button">
+                    <a class="ui massive inverted icon button" href="https://github.com/JING1201" target="_blank">
                         <i class="github large icon"></i>
                     </a>
                     <!-- <div class="ui huge top fixed blue button">About Me</div> -->
@@ -247,38 +275,10 @@
                     </div>
                 </div>
             </div>
-        
-        
-            <div class="ui vertical stripe quote segment">
-                <div class="ui equal width stackable internally celled grid">
-                    <div class="center aligned row">
-                        <div class="column">
-                            <h2 class="ui icon header">
-                                <i class="wrench icon"></i>
-                                <div class="content">
-                                    Skills
-                                </div>
-                            </h2>
-                            <br>
-                            <i class="devicon-python-plain-wordmark colored" style="font-size: 10rem;"></i>         
-                            <i class="devicon-java-plain-wordmark colored" style="font-size: 10rem;"></i>           
-                            <i class="devicon-cplusplus-plain colored" style="font-size: 10rem;"></i>           
-                            <br><br><br><br>
-                            <i class="devicon-html5-plain-wordmark colored" style="font-size: 10rem;"></i>
-                            <i class="devicon-css3-plain-wordmark colored" style="font-size: 10rem;"></i>
-                            <i class="devicon-javascript-plain colored" style="font-size: 10rem;"></i>
-                        </div>
-                        <div class="column">
-                            <h3>Languages</h3>
-                            <p>
-                            <img src="assets/images/avatar/nan.jpg" class="ui avatar image"> <b>Nan</b> Chief Fun Officer Acme Toys
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        
+
             <div class="ui vertical stripe segment" id="experience">
+                <h1 class="ui centered header" style="font-size: 3em;">Experience</h1>
+                <br>
                 <div class="ui text container">
                     <h3 class="ui header">Breaking The Grid, Grabs Your Attention</h3>
                     <p>Instead of focusing on content creation and hard work, we have learned how to master the art of doing nothing by providing massive amounts of whitespace and generic content that can seem massive, monolithic and worth your attention.</p>
@@ -289,6 +289,106 @@
                     <h3 class="ui header">Did We Tell You About Our Bananas?</h3>
                     <p>Yes I know you probably disregarded the earlier boasts as non-sequitur filler content, but its really true. It took years of gene splicing and combinatory DNA research, but our bananas can really dance.</p>
                     <a class="ui large button">I'm Still Quite Interested</a>
+                </div>
+            </div>
+        
+        
+            <div class="ui vertical stripe quote segment" id="skills">
+                <div class="ui equal width stackable internally celled grid">
+                    <div class="center aligned row">
+                        <div class="column">
+                            <h2 class="ui icon header">
+                                <i class="wrench icon"></i>
+                                <div class="content">
+                                    Skills
+                                </div>
+                            </h2>
+                            <br><br><br>
+                            <i class="devicon-python-plain-wordmark colored" style="font-size: 10rem;"></i>         
+                            <i class="devicon-java-plain-wordmark colored" style="font-size: 10rem;"></i>           
+                            <i class="devicon-cplusplus-plain colored" style="font-size: 10rem;"></i>           
+                            <br><br><br><br>
+                            <i class="devicon-html5-plain-wordmark colored" style="font-size: 8rem;"></i>
+                            <i class="devicon-css3-plain-wordmark colored" style="font-size: 8rem;"></i>
+                            <i class="devicon-javascript-plain colored" style="font-size: 8rem;"></i>
+                            <br><br><br><br>
+                            <i class="devicon-ruby-plain-wordmark colored" style="font-size: 5rem;"></i>
+                            <i class="devicon-c-plain colored" style="font-size: 5rem;"></i>
+                            <i class="devicon-csharp-plain-wordmark colored" style="font-size: 5rem;"></i>
+                            <i class="devicon-django-plain colored" style="font-size: 5rem;"></i>
+                            <i class="devicon-git-plain-wordmark colored" style="font-size: 5rem;"></i>
+                            <i class="devicon-heroku-plain-wordmark colored" style="font-size: 5rem;"></i>
+                            <i class="devicon-postgresql-plain-wordmark colored" style="font-size: 5rem;"></i>
+
+                        </div>
+                        <div class="column">
+                            <h2 class="ui icon header">
+                                <i class="language icon"></i>
+                                <div class="content">
+                                    Languages
+                                </div>
+                            </h2>
+                            <br><br><br>
+                            <div class="ui centered three doubling cards">
+                                <a class="ui orange card">
+                                    <div class="content">
+                                        <h1 class="header">Mandarin</h1>
+                                    </div>
+                                    <div class="extra content">
+                                        Native
+                                    </div>
+                                </a>
+                                <a class="ui blue card">
+                                    <div class="content">
+                                        <h1 class="header">English</h1>
+                                    </div>
+                                    <div class="extra content">
+                                        Near Native
+                                    </div>
+                                </a>
+                                <a class="ui red card">
+                                    <div class="content">
+                                        <h1 class="header">Japanese</h1>
+                                    </div>
+                                    <div class="extra content">
+                                        Near Native
+                                    </div>
+                                </a>
+                                <a class="ui yellow card">
+                                    <div class="content">
+                                        <h1 class="header">Cantonese</h1>
+                                    </div>
+                                    <div class="extra content">
+                                        Advanced
+                                    </div>
+                                </a>
+                                <a class="ui purple card">
+                                    <div class="content">
+                                        <h1 class="header">Hokkien</h1>
+                                    </div>
+                                    <div class="extra content">
+                                        Intermediate
+                                    </div>
+                                </a>
+                                <a class="ui green card">
+                                    <div class="content">
+                                        <h1 class="header">Malay</h1>
+                                    </div>
+                                    <div class="extra content">
+                                        Intermediate
+                                    </div>
+                                </a>
+                                <a class="ui brown card">
+                                    <div class="content">
+                                        <h1 class="header">Spanish</h1>
+                                    </div>
+                                    <div class="extra content">
+                                        Beginner
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         
