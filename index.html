@@ -60,6 +60,12 @@
                 padding-left: 10em;
                 padding-right: 10em;
             }
+            .ui.vertical.stripe .nine.wide.column {
+                padding-right: 3em;
+            }
+            .card .extra.content {
+                line-height: 2.3em;
+            }
             .footer.segment {
                 padding: 5em 0em;
             }
@@ -298,13 +304,13 @@
                             <br><br>
                             <div class="ui middle aligned stackable grid container">
                                 <div class="row">
-                                    <div class="four wide column">
+                                    <div class="eight wide column">
                                         <h2 class="ui icon header">
                                             <i class="graduation cap icon"></i>
                                             Education
                                         </h2>
                                     </div>
-                                    <div class="ten wide column">
+                                    <div class="eight wide column">
                                         <div class="ui centered doubling cards">
                                             <a class="ui blue card">
                                                 <div class="content">
@@ -500,75 +506,109 @@
                 </div>
             </div>
             
-            <div class="ui vertical stripe segment" id="projects">
-                <div class="ui middle aligned stackable grid container">
-                    <div class="row">
-                        <div class="four wide column">
-                            <h3 class="ui header">Projects</h3>
-                            <p>Some stuff that I work on during my free time</p>
+            <div class="ui center aligned vertical stripe segment" id="projects">
+                <h3 class="ui center aligned icon header">
+                    <i class="circular laptop icon"></i>
+                    Recent Projects
+                </h3>
+                <br><br>
+                <div class="ui centered doubling cards">
+                    <a class="ui red card">
+                        <div class="ui fluid image">
+                            <div class="ui red ribbon label">
+                                <i class="users icon"></i> Team
+                            </div>
+                            <img src="images/img-translator.png">
                         </div>
-                        <div class="ten wide right floated column">
-                            <div class="ui centered three doubling cards">
-                                <a class="ui orange card">
-                                    <div class="content">
-                                        <h1 class="header">Mandarin</h1>
-                                    </div>
-                                    <div class="extra content">
-                                        Native
-                                    </div>
-                                </a>
-                                <a class="ui blue card">
-                                    <div class="content">
-                                        <h1 class="header">English</h1>
-                                    </div>
-                                    <div class="extra content">
-                                        Near Native
-                                    </div>
-                                </a>
-                                <a class="ui red card">
-                                    <div class="content">
-                                        <h1 class="header">Japanese</h1>
-                                    </div>
-                                    <div class="extra content">
-                                        Near Native
-                                    </div>
-                                </a>
-                                <a class="ui yellow card">
-                                    <div class="content">
-                                        <h1 class="header">Cantonese</h1>
-                                    </div>
-                                    <div class="extra content">
-                                        Advanced
-                                    </div>
-                                </a>
-                                <a class="ui purple card">
-                                    <div class="content">
-                                        <h1 class="header">Hokkien</h1>
-                                    </div>
-                                    <div class="extra content">
-                                        Intermediate
-                                    </div>
-                                </a>
-                                <a class="ui green card">
-                                    <div class="content">
-                                        <h1 class="header">Malay</h1>
-                                    </div>
-                                    <div class="extra content">
-                                        Intermediate
-                                    </div>
-                                </a>
-                                <a class="ui brown card">
-                                    <div class="content">
-                                        <h1 class="header">Spanish</h1>
-                                    </div>
-                                    <div class="extra content">
-                                        Beginner
-                                    </div>
-                                </a>
+                        <div class="content">
+                            <div class="header">Image Translator</div>
+                            <div class="meta">
+                                <span class="location">VandyHacks 2018</span>
+                            </div>
+                            <div class="description">
+                                A chrome extension that translates text on images
                             </div>
                         </div>
-                    </div>
+                        <div class="extra content">
+                            <div class="ui label">Google Cloud Vision API</div>
+                            <div class="ui label">Google Cloud Translation API</div>
+                            <div class="ui label">HTML</div>
+                            <div class="ui label">CSS</div>
+                            <div class="ui label">Javascript</div>
+                        </div>
+                    </a>
+                    <a class="ui orange card">
+                        <div class="ui fluid image">
+                            <div class="ui red ribbon label">
+                                <i class="users icon"></i> Team
+                            </div>
+                            <img src="images/insta-card.png">
+                        </div>
+                        <div class="content">
+                            <div class="header">InstaCard</div>
+                            <div class="meta">
+                                <span class="location">Technica 2018</span>
+                            </div>
+                            <div class="description">
+                                A real-time editor for a pseudocode language that generates HTML
+                            </div>
+                        </div>
+                        <div class="extra content">
+                            <div class="ui label">HTML</div>
+                            <div class="ui label">CSS</div>
+                            <div class="ui label">Javascript</div>
+                        </div>
+                    </a>
+                    <a class="ui yellow card">
+                        <div class="ui fluid image">
+                            <div class="ui red ribbon label">
+                                <i class="users icon"></i> Team
+                            </div>
+                            <img src="images/ubuntu-helpdesk.jpg">
+                        </div>
+                        <div class="content">
+                            <div class="header">Ubuntu Helpdesk</div>
+                            <div class="meta">
+                                <span class="location">HackGT 2018</span>
+                            </div>
+                            <div class="description">
+                                A chatbot that answers questions about the Ubuntu OS
+                            </div>
+                        </div>
+                        <div class="extra content">
+                            <div class="ui label">Python</div>
+                            <div class="ui label">Machine Learning</div>
+                            <div class="ui label">Seq2seq RNN Model</div>
+                            <div class="ui label">Flask</div>
+                        </div>
+                    </a>
+                    <a class="ui green card">
+                        <div class="ui fluid image">
+                            <div class="ui green ribbon label">
+                                <i class="user icon"></i> Personal
+                            </div>
+                            <img src="images/Psychopy.png">
+                        </div>
+                        <div class="content">
+                            <div class="header">Linguistics Experiments</div>
+                            <div class="meta">
+                                <span class="location">Fall 2018</span>
+                            </div>
+                            <div class="description">
+                                A set pf Python scripts that allow psycholinguistics researchers to collect necessary experimental data
+                            </div>
+                        </div>
+                        <div class="extra content">
+                            <div class="ui label">Python</div>
+                            <div class="ui label">Psychopy</div>
+                        </div>
+                    </a>
                 </div>
+                <br><br><br>
+                <a class="ui centered huge primary button">
+                    All Projects
+                    <i class="right chevron icon"></i>
+                </a>
             </div>
         
             <div class="ui inverted vertical footer segment">
