@@ -47,7 +47,7 @@
                 clear: both;
             }
             .ui.vertical.stripe p {
-                font-size: 1.33em;
+                font-size: 1.5em;
             }
             .ui.vertical.stripe .horizontal.divider {
                 margin: 3em 0em;
@@ -57,8 +57,15 @@
                 padding-right: 5em;
             }
             .ui.vertical.stripe .relaxed.items {
-                padding-left: 10em;
-                padding-right: 10em;
+                padding-left: 15em;
+                padding-right: 15em;
+            }
+            .ui.vertical.stripe .relaxed.items .item p {
+                font-size: 1em;
+            }
+            .ui.vertical.stripe .relaxed.items .item .image {
+                width: 22em;
+                height: auto;
             }
             .ui.vertical.stripe .nine.wide.column {
                 padding-right: 3em;
@@ -84,7 +91,7 @@
             .secondary.inverted.menu .toc.item {
                 display: none;
             }
-            @media only screen and (max-width: 700px) {
+            @media only screen and (max-width: 768px) {
                 .ui.fixed.menu {
                 display: none !important;
                 }
@@ -232,13 +239,12 @@
             <a class="item menu-experience" onclick="$('html,body').animate({scrollTop:$('#experience').offset().top});">Experience</a>
             <a class="item menu-skills" onclick="$('html,body').animate({scrollTop:$('#skills').offset().top});">Skills</a>
             <a class="item menu-projects" onclick="$('html,body').animate({scrollTop:$('#projects').offset().top});">Projects</a>
-            <a class="item menu-involvement" onclick="$('html,body').animate({scrollTop:$('#involvement').offset().top});">Involvement</a>
             <a class="item" href="https://drive.google.com/open?id=1OOu8fzeQ5Fz7T13mWFceSIyFdt4EPYSw" target="_blank">
                 Resume
             </a>
             <div class="right menu">
                 <div class="item">
-                <a class="ui inverted button">Contact</a>
+                <a class="ui inverted button" onclick="$('html,body').animate({scrollTop:$('#contact').offset().top});">Contact</a>
                 </div>
             </div>
             </div>
@@ -251,7 +257,6 @@
             <a class="item menu-experience" onclick="$('html,body').animate({scrollTop:$('#experience').offset().top});">Experience</a>
             <a class="item menu-skills" onclick="$('html,body').animate({scrollTop:$('#skills').offset().top});">Skills</a>
             <a class="item menu-projects" onclick="$('html,body').animate({scrollTop:$('#projects').offset().top});">Projects</a>
-            <a class="item menu-involvement" onclick="$('html,body').animate({scrollTop:$('#involvement').offset().top});">Involvement</a>
             <a class="item" href="https://drive.google.com/open?id=1OOu8fzeQ5Fz7T13mWFceSIyFdt4EPYSw" target="_blank">
                 Resume
             </a>
@@ -271,12 +276,11 @@
                             <a class="item menu-experience" onclick="$('html,body').animate({scrollTop:$('#experience').offset().top});">Experience</a>
                             <a class="item menu-skills" onclick="$('html,body').animate({scrollTop:$('#skills').offset().top});">Skills</a>
                             <a class="item menu-projects" onclick="$('html,body').animate({scrollTop:$('#projects').offset().top});">Projects</a>
-                            <a class="item menu-involvement" onclick="$('html,body').animate({scrollTop:$('#involvement').offset().top});">Involvement</a>
                             <a class="item" href="https://drive.google.com/open?id=1OOu8fzeQ5Fz7T13mWFceSIyFdt4EPYSw" target="_blank">
                                 Resume
                             </a>
                             <div class="right item">
-                                <a class="ui inverted button">Contact</a>
+                                <a class="ui inverted button" onclick="$('html,body').animate({scrollTop:$('#contact').offset().top});">Contact</a>
                             </div>
                     </div>
                 </div>
@@ -371,19 +375,22 @@
                     <i class="circular users icon"></i>
                     Work Experience
                 </h3>
+                <br>
                 <div class="ui relaxed items">
                     <div class="item">
                         <div class="image">
                             <img src="images/LearnDialogue.png">
                         </div>
-                        <div class="content">
+                        <div class="middle aligned content">
                             <a class="header">Undergraduate Researcher</a>
                             <div class="meta">
                                 <span class="location">LearnDialogue Lab @ UF</span>
                                 <span class="right floated">August 2018 - Present</span>
                             </div>
                             <div class="description">
-                                <p></p>
+                                <p>
+                                    Currently researching on dialogue systems designed for a game-based learning environment
+                                </p>
                             </div>
                             <div class="extra">
                                 <div class="ui label">Natural Language Processing</div>
@@ -400,20 +407,105 @@
                         <div class="image">
                             <img src="images/IYUNO.jpg">
                         </div>
-                        <div class="content">
+                        <div class="middle aligned content">
                             <a class="header">Freelance Translator</a>
                             <div class="meta">
                                 <span class="location">IYUNO Media Group Malaysia</span>
                                 <span class="right floated">May 2016 - May 2018</span>
                             </div>
                             <div class="description">
-                                <p></p>
+                                <p>Responsible for creating and proofreading Chinese subtitles for Japanese drama and animations</p>
                             </div>
                             <div class="extra">
                                 <div class="ui label">Localization</div>
                             </div>
                         </div>
                     </div>
+                </div>
+                <h3 class="ui center aligned icon header">
+                    <i class="circular handshake icon"></i>
+                    Involvements
+                </h3>
+                <br>
+                <div class="ui relaxed items">
+                    <div class="item">
+                        <div class="image">
+                            <img src="images/wicse.png">
+                        </div>
+                        <div class="middle aligned content">
+                            <a class="header">Treasurer & Mentor</a>
+                            <div class="meta">
+                                <span class="location">UF WiCSE (Women in Computer Science & Engineering)</span>
+                                <span class="right floated">May 2018 - Present</span>
+                            </div>
+                            <div class="description">
+                                <p>
+                                    Handle and document funds, payments, and reimbursements <br>
+                                    Serve as a mentor of three members who are new to CS
+                                </p>
+                            </div>
+                            <div class="extra">
+                                <div class="ui label">Women in CS</div>
+                                <div class="ui label">Diversity</div>
+                                <a class="ui right floated primary button" href="https://www.cise.ufl.edu/dept/ufwicse/" target="_blank">
+                                    Learn More
+                                    <i class="right chevron icon"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="image">
+                            <img src="images/ufosc.png">
+                        </div>
+                        <div class="middle aligned content">
+                            <a class="header">External Relations Chair</a>
+                            <div class="meta">
+                                <span class="location">UF Open Source Club</span>
+                                <span class="right floated">May 2018 - Present</span>
+                            </div>
+                            <div class="description">
+                                <p>Act as the main point of contact of the club for ACM and other organizations for any type of collaborations</p>
+                            </div>
+                            <div class="extra">
+                                <div class="ui label">OSS</div>
+                                <a class="ui right floated primary button" href="https://ufopensource.club/" target="_blank">
+                                    Learn More
+                                    <i class="right chevron icon"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="image">
+                            <img src="images/flo-huge.png">
+                        </div>
+                        <div class="middle aligned content">
+                            <a class="header">Language Facilitator</a>
+                            <div class="meta">
+                                <span class="location">UF FLO (Foreign Language Organization)</span>
+                                <span class="right floated">August 2017 - Present</span>
+                            </div>
+                            <div class="description">
+                                <p>Teach Japanese and Chinese to beginners by holding weekly lessons</p>
+                            </div>
+                            <div class="extra">
+                                <div class="ui label">Language Education</div>
+                                <div class="ui label">Japanese</div>
+                                <div class="ui label">Chinese</div>
+                                <a class="ui right floated primary button" href="https://www.facebook.com/pg/gowithflo.uf/" target="_blank">
+                                    Learn More
+                                    <i class="right chevron icon"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ui center aligned header">
+                    <a class="ui huge primary button" href="https://www.linkedin.com/in/jinglow/" target="_blank">
+                        See More on LinkedIn
+                        <i class="right chevron icon"></i>
+                    </a>
                 </div>
             </div>
         
@@ -617,36 +709,31 @@
                     </a>
                 </div>
                 <br><br><br>
-                <a class="ui centered huge primary button">
+                <a class="ui centered huge primary button" href="allprojects.html">
                     All Projects
                     <i class="right chevron icon"></i>
                 </a>
             </div>
         
-            <div class="ui inverted vertical footer segment">
+            <div class="ui inverted vertical stripe segment" id="contact">
                 <div class="ui container">
-                    <div class="ui stackable inverted divided equal height stackable grid">
-                        <div class="three wide column">
-                            <h4 class="ui inverted header">About</h4>
-                            <div class="ui inverted link list">
-                                <a href="#" class="item">Sitemap</a>
-                                <a href="#" class="item">Contact Us</a>
-                                <a href="#" class="item">Religious Ceremonies</a>
-                                <a href="#" class="item">Gazebo Plans</a>
-                            </div>
+                    <div class="ui middle aligned stackable inverted equal height stackable grid">
+                        <div class="six wide column">
+                            <h1 class="ui inverted massive header">Contact Me</h1>
                         </div>
-                        <div class="three wide column">
-                            <h4 class="ui inverted header">Services</h4>
-                            <div class="ui inverted link list">
-                                <a href="#" class="item">Banana Pre-Order</a>
-                                <a href="#" class="item">DNA FAQ</a>
-                                <a href="#" class="item">How To Access</a>
-                                <a href="#" class="item">Favorite X-Men</a>
-                            </div>
-                        </div>
-                        <div class="seven wide column">
-                            <h4 class="ui inverted header">Footer Header</h4>
-                            <p>Extra space for a call to action inside the footer that could help re-engage users.</p>
+                        <div class="ten wide column">
+                            <a class="ui massive inverted icon button" href="mailto:low.jing@ufl.edu">
+                                <i class="envelope large icon"></i>
+                            </a>
+                            <a class="ui massive inverted icon button" href="https://www.linkedin.com/in/jinglow/" target="_blank">
+                                <i class="linkedin large icon"></i>
+                            </a>
+                            <a class="ui massive inverted icon button" href="https://twitter.com/jlionwg" target="_blank">
+                                <i class="twitter large icon"></i>
+                            </a>
+                            <a class="ui massive inverted icon button" href="https://github.com/JING1201" target="_blank">
+                                <i class="github large icon"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
