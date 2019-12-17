@@ -1,0 +1,130 @@
+.hidden.menu {
+    display: none;
+}
+.masthead.segment {
+    min-height: 750px;
+    padding: 1em 0em;
+    background-image: url('images/background.jpeg') !important;
+    background-size: cover !important;
+}
+.masthead .logo.item img {
+    margin-right: 1em;
+}
+.masthead .ui.menu .ui.button {
+    margin-left: 0.5em;
+}
+.masthead h1.ui.header {
+    margin-top: 3em;
+    margin-bottom: 0em;
+    font-size: 4em;
+    font-weight: normal;
+}
+.masthead h2 {
+    font-size: 1.7em;
+    font-weight: normal;
+}
+.ui.vertical.stripe {
+    padding: 7em 0em;
+}
+.ui.vertical.stripe h3 {
+    font-size: 2em;
+}
+.ui.vertical.stripe .button + h3,
+.ui.vertical.stripe p + h3 {
+    margin-top: 3em;
+}
+.ui.vertical.stripe .floated.image {
+    clear: both;
+}
+.ui.vertical.stripe p {
+    font-size: 1.5em;
+}
+.ui.vertical.stripe .horizontal.divider {
+    margin: 3em 0em;
+}
+.ui.centered.three.doubling.cards {
+    padding-left: 5em;
+    padding-right: 5em;
+}
+.ui.vertical.stripe .relaxed.items {
+    padding-left: 15em;
+    padding-right: 15em;
+}
+.ui.vertical.stripe .relaxed.items .item p {
+    font-size: 1em;
+}
+.ui.vertical.stripe .relaxed.items .item .image {
+    width: 22em;
+    height: auto;
+}
+.ui.vertical.stripe .nine.wide.column {
+    padding-right: 3em;
+}
+.card .extra.content {
+    line-height: 2.3em;
+}
+.card .actual.image {
+    /*Image should be a div*/
+    height: 220px;
+    background-size: auto;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.ui.ribbon.label {
+    position: relative;
+    margin: 0;
+    left: -1rem;
+}
+.footer.segment {
+    padding: 5em 0em;
+}
+.secondary.inverted.menu .toc.item {
+    display: none;
+}
+@media only screen and (max-width: 768px) {
+    .ui.fixed.menu {
+    display: none !important;
+    }
+    .secondary.inverted.menu .item,
+    .secondary.inverted.menu .menu {
+    display: none;
+    }
+    .secondary.inverted.menu .toc.item {
+    display: block;
+    }
+    .masthead.segment {
+    min-height: 350px;
+    }
+    .masthead h1.ui.header {
+    font-size: 2em;
+    margin-top: 1.5em;
+    }
+    .masthead h2 {
+    margin-top: 0.5em;
+    font-size: 1.5em;
+    }
+    .ui.vertical.stripe .relaxed.items {
+    padding-left: 1em;
+    padding-right: 1em;
+    }
+    .ui.centered.three.doubling.cards {
+        padding-left: 1em;
+        padding-right: 1em;
+    }
+}
+.ui.move.reveal .hidden.content{
+    -webkit-transform: translateX(-100%)!important;
+    -ms-transform: translateX(-100%)!important;
+    transform: translateX(-100%)!important;
+}
+.ui.move.reveal:hover .hidden.content{
+    -webkit-transform: translateX(1%)!important;
+    -ms-transform: translateX(1%)!important;
+    transform: translateX(1%)!important;
+}
+.ui.move.reveal>.content {
+    display: block!important;
+}
+body{
+    position: relative;
+}

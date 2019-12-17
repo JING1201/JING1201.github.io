@@ -7,242 +7,23 @@
         <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
         <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
-        <style type="text/css">
-            .hidden.menu {
-                display: none;
-            }
-            .masthead.segment {
-                min-height: 750px;
-                padding: 1em 0em;
-                background-image: url('images/background.jpeg') !important;
-                background-size: cover !important;
-            }
-            .masthead .logo.item img {
-                margin-right: 1em;
-            }
-            .masthead .ui.menu .ui.button {
-                margin-left: 0.5em;
-            }
-            .masthead h1.ui.header {
-                margin-top: 3em;
-                margin-bottom: 0em;
-                font-size: 4em;
-                font-weight: normal;
-            }
-            .masthead h2 {
-                font-size: 1.7em;
-                font-weight: normal;
-            }
-            .ui.vertical.stripe {
-                padding: 7em 0em;
-            }
-            .ui.vertical.stripe h3 {
-                font-size: 2em;
-            }
-            .ui.vertical.stripe .button + h3,
-            .ui.vertical.stripe p + h3 {
-                margin-top: 3em;
-            }
-            .ui.vertical.stripe .floated.image {
-                clear: both;
-            }
-            .ui.vertical.stripe p {
-                font-size: 1.5em;
-            }
-            .ui.vertical.stripe .horizontal.divider {
-                margin: 3em 0em;
-            }
-            .ui.centered.three.doubling.cards {
-                padding-left: 5em;
-                padding-right: 5em;
-            }
-            .ui.vertical.stripe .relaxed.items {
-                padding-left: 15em;
-                padding-right: 15em;
-            }
-            .ui.vertical.stripe .relaxed.items .item p {
-                font-size: 1em;
-            }
-            .ui.vertical.stripe .relaxed.items .item .image {
-                width: 22em;
-                height: auto;
-            }
-            .ui.vertical.stripe .nine.wide.column {
-                padding-right: 3em;
-            }
-            .card .extra.content {
-                line-height: 2.3em;
-            }
-            .card .actual.image {
-                /*Image should be a div*/
-                height: 220px;
-                background-size: auto;
-                background-position: center;
-                background-repeat: no-repeat;
-            }
-            .ui.ribbon.label {
-                position: relative;
-                margin: 0;
-                left: -1rem;
-            }
-            .footer.segment {
-                padding: 5em 0em;
-            }
-            .secondary.inverted.menu .toc.item {
-                display: none;
-            }
-            @media only screen and (max-width: 768px) {
-                .ui.fixed.menu {
-                display: none !important;
-                }
-                .secondary.inverted.menu .item,
-                .secondary.inverted.menu .menu {
-                display: none;
-                }
-                .secondary.inverted.menu .toc.item {
-                display: block;
-                }
-                .masthead.segment {
-                min-height: 350px;
-                }
-                .masthead h1.ui.header {
-                font-size: 2em;
-                margin-top: 1.5em;
-                }
-                .masthead h2 {
-                margin-top: 0.5em;
-                font-size: 1.5em;
-                }
-                .ui.vertical.stripe .relaxed.items {
-                padding-left: 1em;
-                padding-right: 1em;
-                }
-                .ui.centered.three.doubling.cards {
-                    padding-left: 1em;
-                    padding-right: 1em;
-                }
-            }
-            .ui.move.reveal .hidden.content{
-                -webkit-transform: translateX(-100%)!important;
-                -ms-transform: translateX(-100%)!important;
-                transform: translateX(-100%)!important;
-            }
-            .ui.move.reveal:hover .hidden.content{
-                -webkit-transform: translateX(1%)!important;
-                -ms-transform: translateX(1%)!important;
-                transform: translateX(1%)!important;
-            }
-            .ui.move.reveal>.content {
-                display: block!important;
-            }
-            body{
-                position: relative;
-            }
-            </style>
+        <link rel="stylesheet" type="text/css" href="style.css">
         <script
             src="https://code.jquery.com/jquery-3.1.1.min.js"
             integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
             crossorigin="anonymous"></script>
         <script src="semantic/dist/semantic.min.js"></script>
-        <script>
-            $(document)
-                .ready(function() {
-                    // fix menu when passed
-                    $('.masthead')
-                        .visibility({
-                        once: false,
-                        onBottomPassed: function() {
-                            $('.fixed.menu').transition('fade in');
-                        },
-                        onBottomPassedReverse: function() {
-                            $('.fixed.menu').transition('fade out');
-                            $('.active').removeClass('active')
-                            $('.menu-home').addClass('active')
-                        },
-                        onTopPassed: function() {
-                            // top of element passed
-                            $('.active').removeClass('active')
-                            $('.menu-home').addClass('active')
-                        },
-                        })
-                    ;
-                    // create sidebar and attach to menu open
-                    $('.ui.sidebar')
-                        .sidebar('attach events', '.toc.item')
-                    ;
-                    $('#about')
-                        .visibility({
-                            once: false,
-                            onTopPassed: function() {
-                            // top of element passed
-                                $('.active').removeClass('active')
-                                $('.menu-about').addClass('active')
-                            },
-                            onBottomPassedReverse: function() {
-                            // top of element passed
-                                $('.active').removeClass('active')
-                                $('.menu-about').addClass('active')
-                            },
-                        })
-                    ;
-                    $('#experience')
-                        .visibility({
-                            once: false,
-                            onTopPassed: function() {
-                            // top of element passed
-                                $('.active').removeClass('active')
-                                $('.menu-experience').addClass('active')
-                            },
-                            onBottomPassedReverse: function() {
-                            // top of element passed
-                                $('.active').removeClass('active')
-                                $('.menu-experience').addClass('active')
-                            },
-                        })
-                    ;
-                    $('#skills')
-                        .visibility({
-                            once: false,
-                            onTopPassed: function() {
-                            // top of element passed
-                                $('.active').removeClass('active')
-                                $('.menu-skills').addClass('active')
-                            },
-                            onBottomPassedReverse: function() {
-                            // top of element passed
-                                $('.active').removeClass('active')
-                                $('.menu-skills').addClass('active')
-                            },
-                        })
-                    ;
-                    $('#projects')
-                        .visibility({
-                            once: false,
-                            onTopPassed: function() {
-                            // top of element passed
-                                $('.active').removeClass('active')
-                                $('.menu-projects').addClass('active')
-                            },
-                            onBottomPassedReverse: function() {
-                            // top of element passed
-                                $('.active').removeClass('active')
-                                $('.menu-projects').addClass('active')
-                            },
-                        })
-                    ;
-                })
-            ;
-            </script>
+        <script src="script.js"></script>
         <title>Jing Low</title>
     </head>
     <body>
         <!-- Following Menu -->
         <div class="ui large top fixed inverted hidden menu">
             <a class="active item menu-home" onclick="$('html,body').animate({scrollTop:$('#home').offset().top});">Home</a>
-            <a class="item menu-about" onclick="$('html,body').animate({scrollTop:$('#about').offset().top});">About</a>
-            <a class="item menu-experience" onclick="$('html,body').animate({scrollTop:$('#experience').offset().top});">Experience</a>
-            <a class="item menu-skills" onclick="$('html,body').animate({scrollTop:$('#skills').offset().top});">Skills</a>
-            <a class="item menu-projects" onclick="$('html,body').animate({scrollTop:$('#projects').offset().top});">Projects</a>
+            <a class="item menu-about" onclick="$('html,body').animate({scrollTop:$('#about').offset().top+1});">About</a>
+            <a class="item menu-experience" onclick="$('html,body').animate({scrollTop:$('#experience').offset().top+1});">Experience</a>
+            <a class="item menu-skills" onclick="$('html,body').animate({scrollTop:$('#skills').offset().top+1});">Skills</a>
+            <a class="item menu-projects" onclick="$('html,body').animate({scrollTop:$('#projects').offset().top+1});">Projects</a>
             <a class="item" href="https://drive.google.com/open?id=1OOu8fzeQ5Fz7T13mWFceSIyFdt4EPYSw" target="_blank">
                 Resume
             </a>
@@ -257,10 +38,10 @@
         <!-- Sidebar Menu -->
         <div class="ui vertical inverted sidebar menu">
             <a class="active item menu-home" onclick="$('html,body').animate({scrollTop:$('#home').offset().top});">Home</a>
-            <a class="item menu-about" onclick="$('html,body').animate({scrollTop:$('#about').offset().top});">About</a>
-            <a class="item menu-experience" onclick="$('html,body').animate({scrollTop:$('#experience').offset().top});">Experience</a>
-            <a class="item menu-skills" onclick="$('html,body').animate({scrollTop:$('#skills').offset().top});">Skills</a>
-            <a class="item menu-projects" onclick="$('html,body').animate({scrollTop:$('#projects').offset().top});">Projects</a>
+            <a class="item menu-about" onclick="$('html,body').animate({scrollTop:$('#about').offset().top+1});">About</a>
+            <a class="item menu-experience" onclick="$('html,body').animate({scrollTop:$('#experience').offset().top+1});">Experience</a>
+            <a class="item menu-skills" onclick="$('html,body').animate({scrollTop:$('#skills').offset().top+1});">Skills</a>
+            <a class="item menu-projects" onclick="$('html,body').animate({scrollTop:$('#projects').offset().top+1});">Projects</a>
             <a class="item" href="https://drive.google.com/open?id=1OOu8fzeQ5Fz7T13mWFceSIyFdt4EPYSw" target="_blank">
                 Resume
             </a>
@@ -276,10 +57,10 @@
                                 <i class="sidebar icon"></i>
                             </a>
                             <a class="active item menu-home" onclick="$('html,body').animate({scrollTop:$('#home').offset().top});">Home</a>
-                            <a class="item menu-about" onclick="$('html,body').animate({scrollTop:$('#about').offset().top});">About</a>
-                            <a class="item menu-experience" onclick="$('html,body').animate({scrollTop:$('#experience').offset().top});">Experience</a>
-                            <a class="item menu-skills" onclick="$('html,body').animate({scrollTop:$('#skills').offset().top});">Skills</a>
-                            <a class="item menu-projects" onclick="$('html,body').animate({scrollTop:$('#projects').offset().top});">Projects</a>
+                            <a class="item menu-about" onclick="$('html,body').animate({scrollTop:$('#about').offset().top+1});">About</a>
+                            <a class="item menu-experience" onclick="$('html,body').animate({scrollTop:$('#experience').offset().top+1});">Experience</a>
+                            <a class="item menu-skills" onclick="$('html,body').animate({scrollTop:$('#skills').offset().top+1});">Skills</a>
+                            <a class="item menu-projects" onclick="$('html,body').animate({scrollTop:$('#projects').offset().top+1});">Projects</a>
                             <a class="item" href="https://drive.google.com/open?id=1OOu8fzeQ5Fz7T13mWFceSIyFdt4EPYSw" target="_blank">
                                 Resume
                             </a>
@@ -382,6 +163,33 @@
                 <br>
                 <div class="ui relaxed items">
                     <div class="item">
+                            <div class="image">
+                                <img src="images/keysight.png">
+                            </div>
+                            <div class="middle aligned content">
+                                <a class="header">Software Engineering Intern</a>
+                                <div class="meta">
+                                    <span class="location">Keysight Technologies</span>
+                                    <span class="right floated">May 2019 - July 2019</span>
+                                </div>
+                                <div class="description">
+                                    <p>
+                                        Developed a data analysis + visualization tool for the Warranty Cost Analysis Team <br>
+                                        Improved analysis cycle time by 97% through simplifying user procedure and optimizing backend process
+                                    </p>
+                                </div>
+                                <div class="extra">
+                                    <div class="ui label">Financial Data Analysis</div>
+                                    <div class="ui label">Automation</div>
+                                    <div class="ui label">Oscilloscope</div>
+                                    <a class="ui right floated primary button" href="https://www.keysight.com/us/en/home.html" target="_blank">
+                                        Learn More
+                                        <i class="right chevron icon"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    <div class="item">
                         <div class="image">
                             <img src="images/LearnDialogue.png">
                         </div>
@@ -432,6 +240,31 @@
                 </h3>
                 <br>
                 <div class="ui relaxed items">
+                    <div class="item">
+                            <div class="image">
+                                <img src="images/ulingsoc.jpg">
+                            </div>
+                            <div class="middle aligned content">
+                                <a class="header">Vice President</a>
+                                <div class="meta">
+                                    <span class="location">UF Undergraduate Linguistics Society</span>
+                                    <span class="right floated">May 2019 - Present</span>
+                                </div>
+                                <div class="description">
+                                    <p>
+                                        Organize lectures and social events with other board members<br>
+                                        Prepare and give lectures on special topics in linguistics
+                                    </p>
+                                </div>
+                                <div class="extra">
+                                    <div class="ui label">Linguistics</div>
+                                    <a class="ui right floated primary button" href="https://www.facebook.com/ufulingsoc/" target="_blank">
+                                        Learn More
+                                        <i class="right chevron icon"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
                     <div class="item">
                         <div class="image">
                             <img src="images/wicse.png">
