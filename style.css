@@ -108,7 +108,14 @@
     .masthead.segment {
     min-height: 350px;
     }
+    .masthead.segment.short {
+    min-height: 260px;
+    }
     .masthead h1.ui.header {
+    font-size: 2em;
+    margin-top: 1.5em;
+    }
+    .masthead.short h1.ui.header {
     font-size: 2em;
     margin-top: 1.5em;
     }
