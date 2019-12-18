@@ -7,233 +7,336 @@
         <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
         <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
-        <style type="text/css">
-            .hidden.menu {
-                display: none;
-            }
-            .masthead.segment {
-                min-height: 750px;
-                padding: 1em 0em;
-                background-image: url('images/background.jpeg') !important;
-                background-size: cover !important;
-            }
-            .masthead .logo.item img {
-                margin-right: 1em;
-            }
-            .masthead .ui.menu .ui.button {
-                margin-left: 0.5em;
-            }
-            .masthead h1.ui.header {
-                margin-top: 3em;
-                margin-bottom: 0em;
-                font-size: 4em;
-                font-weight: normal;
-            }
-            .masthead h2 {
-                font-size: 1.7em;
-                font-weight: normal;
-            }
-            .ui.vertical.stripe {
-                padding: 7em 0em;
-            }
-            .ui.vertical.stripe h3 {
-                font-size: 2em;
-            }
-            .ui.vertical.stripe .button + h3,
-            .ui.vertical.stripe p + h3 {
-                margin-top: 3em;
-            }
-            .ui.vertical.stripe .floated.image {
-                clear: both;
-            }
-            .ui.vertical.stripe p {
-                font-size: 1.5em;
-            }
-            .ui.vertical.stripe .horizontal.divider {
-                margin: 3em 0em;
-            }
-            .ui.centered.three.doubling.cards {
-                padding-left: 5em;
-                padding-right: 5em;
-            }
-            .ui.vertical.stripe .relaxed.items {
-                padding-left: 15em;
-                padding-right: 15em;
-            }
-            .ui.vertical.stripe .relaxed.items .item p {
-                font-size: 1em;
-            }
-            .ui.vertical.stripe .relaxed.items .item .image {
-                width: 22em;
-                height: auto;
-            }
-            .ui.vertical.stripe .nine.wide.column {
-                padding-right: 3em;
-            }
-            .card .extra.content {
-                line-height: 2.3em;
-            }
-            .card .actual.image {
-                /*Image should be a div*/
-                height: 220px;
-                background-size: auto;
-                background-position: center;
-                background-repeat: no-repeat;
-            }
-            .ui.ribbon.label {
-                position: relative;
-                margin: 0;
-                left: -1rem;
-            }
-            .footer.segment {
-                padding: 5em 0em;
-            }
-            .secondary.inverted.menu .toc.item {
-                display: none;
-            }
-            @media only screen and (max-width: 768px) {
-                .ui.fixed.menu {
-                display: none !important;
-                }
-                .secondary.inverted.menu .item,
-                .secondary.inverted.menu .menu {
-                display: none;
-                }
-                .secondary.inverted.menu .toc.item {
-                display: block;
-                }
-                .masthead.segment {
-                min-height: 350px;
-                }
-                .masthead h1.ui.header {
-                font-size: 2em;
-                margin-top: 1.5em;
-                }
-                .masthead h2 {
-                margin-top: 0.5em;
-                font-size: 1.5em;
-                }
-                .ui.vertical.stripe .relaxed.items {
-                padding-left: 1em;
-                padding-right: 1em;
-                }
-            }
-            .ui.move.reveal .hidden.content{
-                -webkit-transform: translateX(-100%)!important;
-                -ms-transform: translateX(-100%)!important;
-                transform: translateX(-100%)!important;
-            }
-            .ui.move.reveal:hover .hidden.content{
-                -webkit-transform: translateX(1%)!important;
-                -ms-transform: translateX(1%)!important;
-                transform: translateX(1%)!important;
-            }
-            .ui.move.reveal>.content {
-                display: block!important;
-            }
-            body{
-                position: relative;
-            }
-            </style>
+        <link rel="stylesheet" type="text/css" href="style.css">
         <script
             src="https://code.jquery.com/jquery-3.1.1.min.js"
             integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
             crossorigin="anonymous"></script>
         <script src="semantic/dist/semantic.min.js"></script>
-        <script>
-            $(document)
-                .ready(function() {
-                    // fix menu when passed
-                    $('.masthead')
-                        .visibility({
-                        once: false,
-                        onBottomPassed: function() {
-                            $('.fixed.menu').transition('fade in');
-                        },
-                        onBottomPassedReverse: function() {
-                            $('.fixed.menu').transition('fade out');
-                            $('.active').removeClass('active')
-                            $('.menu-home').addClass('active')
-                        },
-                        onTopPassed: function() {
-                            // top of element passed
-                            $('.active').removeClass('active')
-                            $('.menu-home').addClass('active')
-                        },
-                        })
-                    ;
-                    // create sidebar and attach to menu open
-                    $('.ui.sidebar')
-                        .sidebar('attach events', '.toc.item')
-                    ;
-                    $('#about')
-                        .visibility({
-                            once: false,
-                            onTopPassed: function() {
-                            // top of element passed
-                                $('.active').removeClass('active')
-                                $('.menu-about').addClass('active')
-                            },
-                            onBottomPassedReverse: function() {
-                            // top of element passed
-                                $('.active').removeClass('active')
-                                $('.menu-about').addClass('active')
-                            },
-                        })
-                    ;
-                    $('#experience')
-                        .visibility({
-                            once: false,
-                            onTopPassed: function() {
-                            // top of element passed
-                                $('.active').removeClass('active')
-                                $('.menu-experience').addClass('active')
-                            },
-                            onBottomPassedReverse: function() {
-                            // top of element passed
-                                $('.active').removeClass('active')
-                                $('.menu-experience').addClass('active')
-                            },
-                        })
-                    ;
-                    $('#skills')
-                        .visibility({
-                            once: false,
-                            onTopPassed: function() {
-                            // top of element passed
-                                $('.active').removeClass('active')
-                                $('.menu-skills').addClass('active')
-                            },
-                            onBottomPassedReverse: function() {
-                            // top of element passed
-                                $('.active').removeClass('active')
-                                $('.menu-skills').addClass('active')
-                            },
-                        })
-                    ;
-                    $('#projects')
-                        .visibility({
-                            once: false,
-                            onTopPassed: function() {
-                            // top of element passed
-                                $('.active').removeClass('active')
-                                $('.menu-projects').addClass('active')
-                            },
-                            onBottomPassedReverse: function() {
-                            // top of element passed
-                                $('.active').removeClass('active')
-                                $('.menu-projects').addClass('active')
-                            },
-                        })
-                    ;
-                })
-            ;
-            </script>
+        <script src="script.js"></script>
         <title>All Projects</title>
     </head>
     <body>
-        This page doesn't exist yet :( 
-        Sorry
-        I promise I'll make it soon
+        <!-- Following Menu -->
+        <div class="ui large top fixed inverted hidden menu">
+            <a class="item" href="index.html"><i class="left arrow icon"></i>Back to Home</a>
+            <div class="right menu">
+                <div class="item">
+                <a class="ui inverted button" onclick="$('html,body').animate({scrollTop:$('#contact').offset().top});">Contact</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Sidebar Menu -->
+        <div class="ui vertical inverted sidebar menu">
+            <a class="active item menu-home" href="index.html"><i class="left arrow icon"></i>Back to Home</a>
+            <a class="item menu-contact" onclick="$('html,body').animate({scrollTop:$('#contact').offset().top});">Contact</a>
+        </div>
+        <!-- Page Contents -->
+        <div class="pusher">
+            <div class="ui inverted vertical masthead center aligned segment short" id="home">
+                <div class="ui container">
+                    <div class="ui large secondary inverted menu">
+                        <a class="toc item">
+                            <i class="sidebar icon"></i>
+                        </a>
+                        <a class="item" href="index.html"><i class="left arrow icon"></i>Back to Home</a>
+                        <div class="right item">
+                            <div class="item">
+                            <a class="ui inverted button" onclick="$('html,body').animate({scrollTop:$('#contact').offset().top});">Contact</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ui text container">
+                    <h1 class="ui inverted header">
+                        <i class="circular laptop icon"></i>
+                        Jing's Projects
+                    </h1>
+                    <!-- <div class="ui huge top fixed blue button">About Me</div> -->
+                </div>
+            
+            </div>
+
+            <div class="ui center aligned vertical stripe segment" id="projects">
+                <div class="ui centered doubling cards">
+                    <a class="ui card">
+                            <div class="ui fluid image">
+                                <div class="ui red ribbon label">
+                                    <i class="user icon"></i> Team
+                                </div>
+                                <div class="actual image" style="background-image:url('images/interviewer.png');"></div>
+                            </div>
+                            <div class="content">
+                                <div class="header">The Interviewer</div>
+                                <div class="meta">
+                                    <span class="location">Fall 2019</span>
+                                </div>
+                                <div class="description">
+                                    A voice assistant that helps students practice interview questions and build an elevator pitch
+                                </div>
+                            </div>
+                            <div class="extra content">
+                                <div class="ui label">Dialogflow</div>
+                                <div class="ui label">Firebase</div>
+                                <div class="ui label">Javascript</div>
+                            </div>
+                        </a>
+                    <a class="ui card">
+                        <div class="ui fluid image">
+                            <div class="ui green ribbon label">
+                                <i class="user icon"></i> Personal
+                            </div>
+                            <div class="actual image" style="background-image:url('images/shadowchat.png');"></div>
+                        </div>
+                        <div class="content">
+                            <div class="header">Shadow Chat</div>
+                            <div class="meta">
+                                <span class="location">Fall 2019</span>
+                            </div>
+                            <div class="description">
+                                A web application for instant messaging<br>
+                                (Made for WiCSE Shadowing Program)
+                            </div>
+                        </div>
+                        <div class="extra content">
+                            <div class="ui label">Vue.js</div>
+                            <div class="ui label">Firebase</div>
+                            <div class="ui label">HTML</div>
+                            <div class="ui label">CSS</div>
+                            <div class="ui label">Javascript</div>
+                        </div>
+                    </a>
+                    <a class="ui card">
+                        <div class="ui fluid image">
+                            <div class="ui red ribbon label">
+                                <i class="users icon"></i> Team
+                            </div>
+                            <div class="actual image" style="background-image:url('images/news-reliability-checker.png');"></div>
+                        </div>
+                        <div class="content">
+                            <div class="header">News Reliability Checker</div>
+                            <div class="meta">
+                                <span class="location">HackGT 2019</span>
+                            </div>
+                            <div class="description">
+                                A simple web app that assigns a reliability score to a news article provided the link
+                            </div>
+                        </div>
+                        <div class="extra content">
+                            <div class="ui label">Firebase</div>
+                            <div class="ui label">Flask</div>
+                            <div class="ui label">Google Search API</div>
+                            <div class="ui label">HTML</div>
+                            <div class="ui label">CSS</div>
+                            <div class="ui label">Javascript</div>
+                        </div>
+                    </a>
+                    <a class="ui card">
+                        <div class="ui fluid image">
+                            <div class="ui green ribbon label">
+                                <i class="user icon"></i> Personal
+                            </div>
+                            <div class="actual image" style="background-image:url('images/Psychopy.png');"></div>
+                        </div>
+                        <div class="content">
+                            <div class="header">Linguistics Experiments</div>
+                            <div class="meta">
+                                <span class="location">Fall 2018</span>
+                            </div>
+                            <div class="description">
+                                A set pf Python scripts that allow psycholinguistics researchers to collect necessary experimental data
+                            </div>
+                        </div>
+                        <div class="extra content">
+                            <div class="ui label">Python</div>
+                            <div class="ui label">Psychopy</div>
+                        </div>
+                    </a>
+                    <a class="ui card">
+                        <div class="ui fluid image">
+                            <div class="ui red ribbon label">
+                                <i class="users icon"></i> Team
+                            </div>
+                            <div class="actual image" style="background-image:url('images/img-translator.png');"></div>
+                        </div>
+                        <div class="content">
+                            <div class="header">Image Translator</div>
+                            <div class="meta">
+                                <span class="location">VandyHacks 2018</span>
+                            </div>
+                            <div class="description">
+                                A chrome extension that translates text on images
+                            </div>
+                        </div>
+                        <div class="extra content">
+                            <div class="ui label">Google Cloud Vision API</div>
+                            <div class="ui label">Google Cloud Translation API</div>
+                            <div class="ui label">HTML</div>
+                            <div class="ui label">CSS</div>
+                            <div class="ui label">Javascript</div>
+                        </div>
+                    </a>
+                    <a class="ui card">
+                        <div class="ui fluid image">
+                            <div class="ui red ribbon label">
+                                <i class="users icon"></i> Team
+                            </div>
+                            <div class="actual image" style="background-image:url('images/insta-card.png');"></div>
+                        </div>
+                        <div class="content">
+                            <div class="header">InstaCard</div>
+                            <div class="meta">
+                                <span class="location">Technica 2018</span>
+                            </div>
+                            <div class="description">
+                                A real-time editor for a pseudocode language that generates HTML
+                            </div>
+                        </div>
+                        <div class="extra content">
+                            <div class="ui label">HTML</div>
+                            <div class="ui label">CSS</div>
+                            <div class="ui label">Javascript</div>
+                        </div>
+                    </a>
+                    <a class="ui card">
+                        <div class="ui fluid image">
+                            <div class="ui red ribbon label">
+                                <i class="users icon"></i> Team
+                            </div>
+                            <div class="actual image" style="background-image:url('images/ubuntu-helpdesk.jpg');"></div>
+                        </div>
+                        <div class="content">
+                            <div class="header">Ubuntu Helpdesk</div>
+                            <div class="meta">
+                                <span class="location">HackGT 2018</span>
+                            </div>
+                            <div class="description">
+                                A chatbot that answers questions about the Ubuntu OS
+                            </div>
+                        </div>
+                        <div class="extra content">
+                            <div class="ui label">Python</div>
+                            <div class="ui label">Machine Learning</div>
+                            <div class="ui label">Seq2seq RNN Model</div>
+                            <div class="ui label">Flask</div>
+                        </div>
+                    </a>
+                    <a class="ui card">
+                        <div class="ui fluid image">
+                            <div class="ui red ribbon label">
+                                <i class="users icon"></i> Team
+                            </div>
+                            <div class="actual image" style="background-image:url('images/tone-sensei.png');"></div>
+                        </div>
+                        <div class="content">
+                            <div class="header">Tone Sensei</div>
+                            <div class="meta">
+                                <span class="location">ShellHacks 2018</span>
+                            </div>
+                            <div class="description">
+                                A web app that helps Mandarin Chinese learners to practice pronouncing different tones
+                            </div>
+                        </div>
+                        <div class="extra content">
+                            <div class="ui label">Python</div>
+                            <div class="ui label">Django</div>
+                            <div class="ui label">Google Cloud Platform</div>
+                            <div class="ui label">Javascript</div>
+                            <div class="ui label">Machine Learning</div>
+                            <div class="ui label">Mysql</div>
+                        </div>
+                    </a>
+                    <a class="ui card">
+                        <div class="ui fluid image">
+                            <div class="ui red ribbon label">
+                                <i class="users icon"></i> Team
+                            </div>
+                            <div class="actual image" style="background-image:url('images/big-idea.jpg');"></div>
+                        </div>
+                        <div class="content">
+                            <div class="header">Static Save</div>
+                            <div class="meta">
+                                <span class="location">Spring 2018</span>
+                            </div>
+                            <div class="description">
+                                A mobile app built for an electricity bill monitoring service <br>
+                                (UF Big Idea Business Plan Competition)
+                            </div>
+                        </div>
+                        <div class="extra content">
+                            <div class="ui label">React Native</div>
+                        </div>
+                    </a>
+                    <a class="ui card">
+                        <div class="ui fluid image">
+                            <div class="ui red ribbon label">
+                                <i class="users icon"></i> Team
+                            </div>
+                            <div class="actual image" style="background-image:url('images/poker.jpg');"></div>
+                        </div>
+                        <div class="content">
+                            <div class="header">Poker</div>
+                            <div class="meta">
+                                <span class="location">Fall 2017</span>
+                            </div>
+                            <div class="description">
+                                A command-line based C++ human vs computer poker game
+                            </div>
+                        </div>
+                        <div class="extra content">
+                            <div class="ui label">C++</div>
+                            <div class="ui label">UML Diagram</div>
+                        </div>
+                    </a>
+                    <a class="ui card">
+                        <div class="ui fluid image">
+                            <div class="ui green ribbon label">
+                                <i class="users icon"></i> Personal
+                            </div>
+                            <div class="actual image" style="background-image:url('images/markov-note.jpg');"></div>
+                        </div>
+                        <div class="content">
+                            <div class="header">Markov Note</div>
+                            <div class="meta">
+                                <span class="location">Fall 2016</span>
+                            </div>
+                            <div class="description">
+                                A Java program that generates a new melody based on the input melody
+                            </div>
+                        </div>
+                        <div class="extra content">
+                            <div class="ui label">Java</div>
+                            <div class="ui label">Markov Chain</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="ui inverted vertical stripe segment" id="contact">
+                <div class="ui container">
+                    <div class="ui middle aligned stackable inverted equal height stackable grid">
+                        <div class="six wide column">
+                            <h1 class="ui inverted massive header">Contact Me</h1>
+                        </div>
+                        <div class="ten wide column">
+                            <a class="ui massive inverted icon button" href="mailto:low.jing@ufl.edu">
+                                <i class="envelope large icon"></i>
+                            </a>
+                            <a class="ui massive inverted icon button" href="https://www.linkedin.com/in/jinglow/" target="_blank">
+                                <i class="linkedin large icon"></i>
+                            </a>
+                            <a class="ui massive inverted icon button" href="https://twitter.com/jlionwg" target="_blank">
+                                <i class="twitter large icon"></i>
+                            </a>
+                            <a class="ui massive inverted icon button" href="https://github.com/JING1201" target="_blank">
+                                <i class="github large icon"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </body>
 </html>

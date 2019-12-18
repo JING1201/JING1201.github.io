@@ -7,6 +7,13 @@
     background-image: url('images/background.jpeg') !important;
     background-size: cover !important;
 }
+
+.masthead.segment.short {
+    min-height: 500px;
+    padding: 1em 0em;
+    background-image: url('images/background.jpeg') !important;
+    background-size: cover !important;
+}
 .masthead .logo.item img {
     margin-right: 1em;
 }
@@ -15,6 +22,12 @@
 }
 .masthead h1.ui.header {
     margin-top: 3em;
+    margin-bottom: 0em;
+    font-size: 4em;
+    font-weight: normal;
+}
+.masthead.short h1.ui.header {
+    margin-top: 1.5em;
     margin-bottom: 0em;
     font-size: 4em;
     font-weight: normal;
